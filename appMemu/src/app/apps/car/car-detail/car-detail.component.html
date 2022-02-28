@@ -1,0 +1,33 @@
+<div class="container">
+  <div *ngIf="cars; else noCars">
+    <h4>
+      <mark>Автомобиль:</mark>
+       {{cars.name}}<small> {{cars.model}}</small></h4>
+    <div class="col-md-12 mt-2 mb-2">
+      <img src="{{cars.img}}" width="500">
+    </div>
+    <div class="alert alert-success">
+      Характеристики автомобиля:
+      <ul>
+        <li>Скорость: <strong>{{cars.speed}}</strong> Км</li>
+        <li>Цвет автомобиля: <strong>{{cars.colorsCar}}</strong></li>
+        <li>Цвет салона: <strong>{{cars.colorsSalon}}</strong></li>
+        <li>Цвет колес: <strong>{{cars.colorsWheels}}</strong></li>
+      </ul>
+    </div>
+    <h5>Возможности автомобиля</h5>
+    <div class="alert alert-warning">
+      <ul>
+        <li>{{cars.options}}</li>
+      </ul>
+    </div>
+  </div>
+
+  <h5>Другие автомобиля</h5>
+  <div class="col-md-12">
+    <button (click)="goBack()" class="btn btn-success mr-3 m-1">Посмотреть другие авто</button>
+  </div>
+
+</div>
+
+<ng-template #noCars>Error<ng-template>

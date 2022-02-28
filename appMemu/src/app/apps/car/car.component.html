@@ -1,0 +1,9 @@
+
+<div class="container">
+  <a routerLink="/" class="btn btn-dark mb-2">Назад</a>
+  <div *ngFor="let car of carService.cars" class="mb-2">
+    <a routerLink="/car/{{car.id}}" class="btn btn-success">
+      <h4>Автомобиль: {{car.name}} <small>{{car.model}}</small></h4>
+    </a>
+  </div>
+</div>
